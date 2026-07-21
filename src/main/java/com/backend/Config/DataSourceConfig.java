@@ -68,6 +68,8 @@ public class DataSourceConfig {
             config.setUsername(username);
             config.setPassword(password);
             config.setMaximumPoolSize(10);
+            config.setMinimumIdle(0);
+            config.setIdleTimeout(60000);
             
             return new HikariDataSource(config);
         } catch (Exception e) {
